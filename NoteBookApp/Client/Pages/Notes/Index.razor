@@ -1,0 +1,28 @@
+﻿@using Microsoft.AspNetCore.Authorization
+@using NoteBookApp.Shared
+
+@page "/notes"
+@attribute [Authorize]
+
+<h1>Notatki</h1>
+
+<a href="notes/new" class="btn btn-dark" title="Nowa notatka">
+    <span class="oi oi-plus" aria-hidden="true"></span>&nbsp;Dodaj notatkę
+</a>
+
+<RadzenDataGrid  Count="@Model.Count" Data="@Model.Notes" LoadData="@LoadData" AllowSorting="true"  AllowPaging="true" PageSize="@Constants.PageSize" TItem="NoteViewModel">
+    <Columns>
+        <RadzenDataGridColumn TItem="NoteViewModel" Property="CreatedDateTime" Title="Data" />
+        <RadzenDataGridColumn TItem="NoteViewModel" Property="Content" Title="Notatka" />
+        <RadzenDataGridColumn TItem="NoteViewModel" Title="Akcje" Sortable="false">
+            <Template Context="data">
+                <a href="@($"notes/{data.Id}/edit")" class="btn btn-warning" title="Edytuj notatkę">
+                    <span class="oi oi-pencil"></span>
+                </a>
+                <button type="button" @onclick="@(() => DeleteNote(data.Id))" class="btn btn-danger"  title="Usuń notatkę">
+                    <span class="oi oi-trash"></span>
+                </button>
+            </Template>
+        </RadzenDataGridColumn>
+    </Columns>
+</RadzenDataGrid>

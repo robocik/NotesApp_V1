@@ -12,7 +12,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="NHibernate" Version="5.3.10" />
-		<PackageReference Include="NHibernate.AspNetCore.Identity" Version="5.0.14" />
+		<PackageReference Include="NHibernate.AspNetCore.Identity" Version="5.0.15" />
 		<PackageReference Include="AutoMapper" Version="10.1.1" />
 		<PackageReference Include="MediatR" Version="9.0.0" />
 	</ItemGroup>
@@ -22,7 +22,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\NoteBookApp\Shared\NoteBookApp.Shared.csproj" />
+	  <ProjectReference Include="..\Shared\NoteBookApp.Shared.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoteBookApp.Client", "NoteB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoteBookApp.Shared", "NoteBookApp\Shared\NoteBookApp.Shared.csproj", "{D08CCDCF-2619-4D8D-8E06-360D8BA64EB9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoteBookApp.Logic", "NoteBookApp.Logic\NoteBookApp.Logic.csproj", "{2D922A14-F0FB-4705-873A-72B0D4B6F9E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoteBookApp.Logic", "NoteBookApp\Logic\NoteBookApp.Logic.csproj", "{2D922A14-F0FB-4705-873A-72B0D4B6F9E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -20,9 +20,9 @@
 	  <None Remove="Models\**" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="5.0.10" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="5.0.11" />
 		<PackageReference Include="NHibernate" Version="5.3.10" />
-		<PackageReference Include="NHibernate.AspNetCore.Identity" Version="5.0.14" />
+		<PackageReference Include="NHibernate.AspNetCore.Identity" Version="5.0.15" />
 		<PackageReference Include="NHibernate.NetCore" Version="5.0.11" />
 		<PackageReference Include="Microsoft.Data.SqlClient" Version="3.0.1" />
 		<PackageReference Include="AutoMapper" Version="10.1.1" />
@@ -31,14 +31,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\NoteBookApp.Logic\NoteBookApp.Logic.csproj" />
 		<ProjectReference Include="..\Client\NoteBookApp.Client.csproj" />
+		<ProjectReference Include="..\Logic\NoteBookApp.Logic.csproj" />
 		<ProjectReference Include="..\Shared\NoteBookApp.Shared.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.10" />
-		<PackageReference Include="Microsoft.AspNetCore.ApiAuthorization.IdentityServer" Version="5.0.10" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.11" />
+		<PackageReference Include="Microsoft.AspNetCore.ApiAuthorization.IdentityServer" Version="5.0.11" />
 	</ItemGroup>
 
 </Project>

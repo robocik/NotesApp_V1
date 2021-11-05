@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
-using NHibernate;
 using NHibernate.AspNetCore.Identity;
 using NHibernate.Cfg;
 using NHibernate.Connection;
@@ -24,16 +23,12 @@ namespace NoteBookApp.Server.Infrastructure
                 db.Dialect<MsSql2012Dialect>();
                 db.Driver<MicrosoftDataSqlClientDriver>();
                 db.ConnectionProvider<DriverConnectionProvider>();
-                db.BatchSize = 500;
-                //db.IsolationLevel = System.Data.IsolationLevel.ReadCommitted;
                 db.LogSqlInConsole = true;
                 db.ConnectionString = cnString;
                 db.Timeout = 30;/*seconds*/
                 db.SchemaAction = SchemaAutoAction.Validate;
             });
 
-
-            //cfg.Proxy(p => p.ProxyFactoryFactory<StaticProxyFactoryFactory>());
             services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddDefaultTokenProviders()
                 .AddHibernateStores();
@@ -51,12 +46,6 @@ namespace NoteBookApp.Server.Infrastructure
             cfg.BuildSessionFactory();
 #endif
 
-            services.AddScoped<ISession>(provider =>
-            {
-                //var companyResolution = provider.GetService<ICompanyResolutionStrategy>();
-                //var companyId = companyResolution!.GetCompanyIdAsync().GetAwaiter().GetResult();
-                return provider.GetService<ISessionFactory>()!.OpenSession();
-            });
             return services;
         }
     }
